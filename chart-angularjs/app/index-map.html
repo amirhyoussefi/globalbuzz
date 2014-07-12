@@ -1,0 +1,47 @@
+<html>
+  <head>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+    google.load('visualization', '1', { 'packages': ['map'] });
+    google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['Country', 'Population'],
+		['INDIA',861134],
+		['SWITZERLAND',447572],
+		['NETHERLANDS',289357],
+		['SWEDEN',2873],
+		['COSTARICA',2784],
+		['HAITI',2004],
+		['DOMINICANREP',1614],
+		['LESOTHO',1428],
+		['TAIWAN',798],
+		['CAMBODIA',698],
+		['PARAGUAY',516],
+		['DENMARK',482],
+		['MALAYSIA',321],
+		['BERMUDA',296],
+		['KAZAKHSTAN',200],
+		['CAYMANISLANDS',148],
+		['FIJI',84],
+		['THAILAND',66],
+		['JAMAICA',60],
+		['RUSSIA',31],
+		['ARGENTINA',21],
+		['BOLIVIA',13],
+		['GUATEMALA',8]
+      ]);
+
+    var options = { showTip: true,useMapTypeControl: true };
+
+    var map = new google.visualization.Map(document.getElementById('chart_div'));
+
+    map.draw(data, options);
+  };
+  </script>
+  </head>
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>
